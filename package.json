@@ -1,8 +1,8 @@
 {
   "name": "yes-https",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple utility to force https for connect based node.js apps.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "mocha"
   },
