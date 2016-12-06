@@ -39,7 +39,9 @@ app.use(yes({
   includeSubdomains: true,  // defaults `true`
   preload: true             // defaults `true`           
 }));
+```
 
 ## Contributing
-Pull requests welcomed!  I'm using yarn here, so please make sure to use `yarn add` or `yarn install` when adding new dependencies (and of course include changes to `yarn.lock`);
+
+Pull requests welcomed!  I'm using yarn here, so please make sure to use `yarn add` or `yarn install` when adding new dependencies. And of course include changes to `yarn.lock` with the commit. 
 
