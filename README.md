@@ -1,6 +1,7 @@
 # YES HTTPS!
 
 [![Build Status](https://travis-ci.org/JustinBeckwith/yes-https.svg?branch=master)](https://travis-ci.org/JustinBeckwith/yes-https)
+[![npm version](https://badge.fury.io/js/yes-https.svg)](https://badge.fury.io/js/yes-https)
 
 `yes-https` is a happy little npm module that makes it easy to require `https` for your connect based application.  
 
