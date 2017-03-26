@@ -47,11 +47,16 @@ describe('yes', () => {
       });;
   }).timeout(60000);
 
-  it('should ignore flex health checks // HACK HACK HACK', (done) => {
+  it('should ignore filtered requests', (done) => {
     
     // configure a minimal web server with the defaults
     let app = express();
-    app.use(yes());
+    app.use(yes({
+      ignoreFilter: (req) => {
+        return (req.url.indexOf('/_ah/health') > -1); 
+      }
+    }));
+    
     app.get('/_ah/health', (req, res) => {
       res.sendStatus(200);
     });

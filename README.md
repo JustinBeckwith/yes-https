@@ -44,6 +44,18 @@ app.use(yes({
 }));
 ```
 
+### Ignoring specific requests
+
+In some cases, you may want to ignore a request and not force the redirect.  You can use the `ignoreFilter` option to opt out of redirects on a case by case basis.  This is useful if you want to ignore a specific route:
+
+```js
+app.use(yes({
+  ignoreFilter: (req) => {
+    return (req.url.indexOf('/_ah/health') > -1); 
+  }          
+}));
+```
+
 ## Contributing
 
 Pull requests welcomed!  I'm using yarn here, so please make sure to use `yarn add` or `yarn install` when adding new dependencies. And of course include changes to `yarn.lock` with the commit. 
