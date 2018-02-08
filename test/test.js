@@ -7,10 +7,11 @@ const fs = require('fs');
 process.env.NODE_TLS_REJECT_UNAUTHORIZED=0;
 
 describe('yes', () => {
+
   it('should perform the 301 for an http request', (done) => {
-    
+
     // configure a minimal web server with the defaults
-    let app = express();
+    const app = express();
     app.use(yes());
     app.get('/test', (req, res) => {
       res.sendStatus(200);
@@ -27,36 +28,37 @@ describe('yes', () => {
   });
 
   it('should use the correct defaults', (done) => {
-    
+
     // configure a minimal web server with the defaults
-    let app = express();
+    const app = express();
     app.use(yes());
     app.get('/test', (req, res) => {
       res.sendStatus(200);
     });
 
     // verify the request returns the right header when using https
-    let server = createSecureServer(app);
+    const server = createSecureServer(app);
     request('https://localhost:8443')
       .get('/test')
-      .expect('Strict-Transport-Security', 'max-age=86400; includeSubDomains')  
+      .expect('Strict-Transport-Security', 'max-age=86400; includeSubDomains')
       .expect(200)
       .end((err, res) => {
         if (err) throw err;
+        server.close();
         done();
       });;
   }).timeout(60000);
 
   it('should ignore filtered requests', (done) => {
-    
+
     // configure a minimal web server with the defaults
-    let app = express();
+    const app = express();
     app.use(yes({
       ignoreFilter: (req) => {
-        return (req.url.indexOf('/_ah/health') > -1); 
+        return (req.url.indexOf('/_ah/health') > -1);
       }
     }));
-    
+
     app.get('/_ah/health', (req, res) => {
       res.sendStatus(200);
     });
@@ -71,7 +73,6 @@ describe('yes', () => {
       });
   });
 });
-
 
 function createSecureServer(app) {
   // server the app over https
