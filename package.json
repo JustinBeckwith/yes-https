@@ -21,9 +21,9 @@
   },
   "homepage": "https://github.com/JustinBeckwith/yes-https#readme",
   "devDependencies": {
-    "express": "^4.14.0",
-    "mocha": "^5.0.0",
-    "request": "^2.79.0",
-    "supertest": "^3.1.0"
+    "express": "4.16.2",
+    "mocha": "5.0.0",
+    "request": "2.83.0",
+    "supertest": "2.0.1"
   }
 }
