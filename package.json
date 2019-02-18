@@ -22,7 +22,7 @@
   "homepage": "https://github.com/JustinBeckwith/yes-https#readme",
   "devDependencies": {
     "express": "^4.16.3",
-    "mocha": "^5.2.0",
+    "mocha": "^6.0.0",
     "request": "^2.87.0",
     "supertest": "^3.1.0"
   }
