@@ -68,4 +68,3 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run compile
-      - run: npx semantic-release
