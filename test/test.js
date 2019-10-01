@@ -57,7 +57,7 @@ describe('yes', () => {
 		const app = express();
 		app.use(yes({
 			ignoreFilter: req => {
-				return (req.url.indexOf('/_ah/health') > -1);
+				return (req.url.includes('/_ah/health'));
 			}
 		}));
 
