@@ -30,9 +30,11 @@
     "xo": "^0.25.0"
   },
   "xo": {
-    "overrides": [{
-      "files": "test/*.js",
-      "env": "mocha"
-    }]
+    "overrides": [
+      {
+        "files": "test/*.js",
+        "env": "mocha"
+      }
+    ]
   }
 }
