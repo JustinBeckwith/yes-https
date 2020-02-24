@@ -24,7 +24,7 @@
   "homepage": "https://github.com/JustinBeckwith/yes-https#readme",
   "devDependencies": {
     "express": "^4.16.3",
-    "mocha": "^6.0.0",
+    "mocha": "^7.0.0",
     "request": "^2.87.0",
     "supertest": "^4.0.0",
     "xo": "^0.27.0"
