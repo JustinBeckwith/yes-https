@@ -11,8 +11,8 @@ describe('yes', () => {
 		// Configure a minimal web server with the defaults
 		const app = express();
 		app.use(yes());
-		app.get('/test', (req, res) => {
-			res.sendStatus(200);
+		app.get('/test', (request_, response) => {
+			response.sendStatus(200);
 		});
 
 		// Verify the request returns a 301
@@ -32,8 +32,8 @@ describe('yes', () => {
 		// Configure a minimal web server with the defaults
 		const app = express();
 		app.use(yes());
-		app.get('/test', (req, res) => {
-			res.sendStatus(200);
+		app.get('/test', (_request, response) => {
+			response.sendStatus(200);
 		});
 
 		// Verify the request returns the right header when using https
@@ -56,13 +56,13 @@ describe('yes', () => {
 		// Configure a minimal web server with the defaults
 		const app = express();
 		app.use(yes({
-			ignoreFilter: req => {
-				return (req.url.includes('/_ah/health'));
+			ignoreFilter: request_ => {
+				return (request_.url.includes('/_ah/health'));
 			}
 		}));
 
-		app.get('/_ah/health', (req, res) => {
-			res.sendStatus(200);
+		app.get('/_ah/health', (_request, response) => {
+			response.sendStatus(200);
 		});
 
 		// Verify the request returns a 200 for health checks
