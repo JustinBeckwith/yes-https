@@ -23,11 +23,10 @@
   },
   "homepage": "https://github.com/JustinBeckwith/yes-https#readme",
   "devDependencies": {
-    "express": "^4.16.3",
-    "mocha": "^6.0.0",
-    "request": "^2.87.0",
-    "supertest": "^4.0.0",
-    "xo": "^0.27.0"
+    "express": "^4.17.1",
+    "mocha": "^7.1.1",
+    "supertest": "^4.0.2",
+    "xo": "^0.29.0"
   },
   "xo": {
     "overrides": [
@@ -36,5 +35,8 @@
         "env": "mocha"
       }
     ]
+  },
+  "engines": {
+    "node": ">=10"
   }
 }
