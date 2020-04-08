@@ -1,6 +1,6 @@
 # YES HTTPS!
 
-[![Build Status](https://circleci.com/gh/JustinBeckwith/yes-https.svg?style=shield)](https://circleci.com/gh/JustinBeckwith/yes-https)
+[![Build Status](https://github.com/JustinBeckwith/yes-https/workflows/ci/badge.svg)](https://github.com/JustinBeckwith/yes-https/actions/)
 [![npm version](https://badge.fury.io/js/yes-https.svg)](https://badge.fury.io/js/yes-https)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
@@ -13,7 +13,7 @@ It does this two ways:
 
 ## Installation
 
-`npm install --save yes-https`
+`npm install yes-https`
 
 ## Usage
 
