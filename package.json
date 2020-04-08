@@ -35,5 +35,8 @@
         "env": "mocha"
       }
     ]
+  },
+  "engines": {
+    "node": ">=10"
   }
 }
