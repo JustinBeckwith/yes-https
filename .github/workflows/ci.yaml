@@ -50,7 +50,6 @@ jobs:
         with:
           node-version: 12
       - run: npm install
-      - run: npm run compile
       - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
