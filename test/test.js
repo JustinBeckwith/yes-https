@@ -19,9 +19,9 @@ describe('yes', () => {
 		request(app)
 			.get('/test')
 			.expect(301)
-			.end(err => {
-				if (err) {
-					throw err;
+			.end(error => {
+				if (error) {
+					throw error;
 				}
 
 				done();
@@ -42,9 +42,9 @@ describe('yes', () => {
 			.get('/test')
 			.expect('Strict-Transport-Security', 'max-age=86400; includeSubDomains')
 			.expect(200)
-			.end(err => {
-				if (err) {
-					throw err;
+			.end(error => {
+				if (error) {
+					throw error;
 				}
 
 				server.close();
@@ -69,9 +69,9 @@ describe('yes', () => {
 		request(app)
 			.get('/_ah/health')
 			.expect(200)
-			.end(err => {
-				if (err) {
-					throw err;
+			.end(error => {
+				if (error) {
+					throw error;
 				}
 
 				done();
