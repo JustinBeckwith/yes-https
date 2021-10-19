@@ -1,5 +1,6 @@
-const express = require('express');
-const yes = require('../lib/index.js');
+import process from 'node:process';
+import express from 'express';
+import yes from '../lib/index.js';
 
 const app = express();
 

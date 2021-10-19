@@ -2,7 +2,8 @@
   "name": "yes-https",
   "version": "0.0.0",
   "description": "A simple utility to force https for connect based node.js apps.",
-  "main": "lib/index.js",
+  "type": "module",
+  "exports": "./lib/index.js",
   "scripts": {
     "test": "NODE_ENV=production c8 mocha",
     "lint": "xo",
@@ -29,7 +30,7 @@
     "express": "^4.17.1",
     "mocha": "^9.0.0",
     "supertest": "^6.0.0",
-    "xo": "^0.39.0"
+    "xo": "^0.45.0"
   },
   "xo": {
     "overrides": [
@@ -40,6 +41,6 @@
     ]
   },
   "engines": {
-    "node": ">=10"
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   }
 }

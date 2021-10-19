@@ -1,8 +1,9 @@
-const https = require('https');
-const fs = require('fs');
-const express = require('express');
-const request = require('supertest');
-const yes = require('../lib/index.js');
+import https from 'node:https';
+import fs from 'node:fs';
+import process from 'node:process';
+import express from 'express';
+import request from 'supertest';
+import yes from '../lib/index.js';
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 
@@ -50,15 +51,13 @@ describe('yes', () => {
 				server.close();
 				done();
 			});
-	}).timeout(60000);
+	}).timeout(60_000);
 
 	it('should ignore filtered requests', done => {
 		// Configure a minimal web server with the defaults
 		const app = express();
 		app.use(yes({
-			ignoreFilter: request_ => {
-				return (request_.url.includes('/_ah/health'));
-			}
+			ignoreFilter: request_ => (request_.url.includes('/_ah/health')),
 		}));
 
 		app.get('/_ah/health', (_request, response) => {
@@ -86,6 +85,6 @@ function createSecureServer(app) {
 		cert: fs.readFileSync('./test/certs/server.crt'),
 		ca: fs.readFileSync('./test/certs/ca.crt'),
 		requestCert: true,
-		rejectUnauthorized: false
+		rejectUnauthorized: false,
 	}, app).listen('8443');
 }
