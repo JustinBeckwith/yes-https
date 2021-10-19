@@ -18,8 +18,8 @@ It does this two ways:
 ## Usage
 
 ```js
-const yes = require('yes-https');
-const express = require('express');
+import yes from 'yes-https';
+import express from 'express';
 
 let app = express();
 
