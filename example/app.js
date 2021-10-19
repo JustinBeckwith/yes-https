@@ -1,5 +1,5 @@
 const express = require('express');
-const yes = require('../lib');
+const yes = require('../lib/index.js');
 
 const app = express();
 

@@ -2,7 +2,7 @@ const https = require('https');
 const fs = require('fs');
 const express = require('express');
 const request = require('supertest');
-const yes = require('../lib');
+const yes = require('../lib/index.js');
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 
