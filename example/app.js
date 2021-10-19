@@ -1,3 +1,4 @@
+import process from 'node:process';
 import express from 'express';
 import yes from '../lib/index.js';
 
