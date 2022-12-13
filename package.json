@@ -26,13 +26,12 @@
   "homepage": "https://github.com/JustinBeckwith/yes-https#readme",
   "devDependencies": {
     "c8": "^7.1.0",
-    "codecov": "^3.6.5",
     "express": "^4.17.1",
     "mocha": "^10.0.0",
     "supertest": "^6.0.0",
     "xo": "^0.53.1"
   },
   "engines": {
-    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+    "node": ">=12.20.0"
   }
 }
