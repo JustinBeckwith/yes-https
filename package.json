@@ -6,8 +6,8 @@
   "exports": "./lib/index.js",
   "scripts": {
     "test": "NODE_ENV=production c8 mocha",
-    "lint": "xo",
-    "fix": "xo --fix",
+    "lint": "biome check .",
+    "fix": "biome check --write .",
     "coverage": "c8 report --reporter=json"
   },
   "repository": {
@@ -25,11 +25,11 @@
   },
   "homepage": "https://github.com/JustinBeckwith/yes-https#readme",
   "devDependencies": {
+    "@biomejs/biome": "^2.2.6",
     "c8": "^10.0.0",
     "express": "^4.17.1",
     "mocha": "^11.0.0",
-    "supertest": "^7.0.0",
-    "xo": "^0.58.0"
+    "supertest": "^7.0.0"
   },
   "engines": {
     "node": ">=18"
