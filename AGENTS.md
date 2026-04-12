@@ -10,6 +10,7 @@
 
 - Use `npm` for dependency and script commands.
 - Prefer small, focused changes. Avoid unrelated cleanup in the same PR.
+- Use Conventional Commits for commit messages and PR titles (for example: `fix: ...`, `feat: ...`, `docs: ...`). This repository uses `release-please`, so incorrect commit or PR prefixes can break release automation.
 - Keep the public middleware API and the README example aligned when behavior or options change.
 - Do not edit `CHANGELOG.md` or `.release-please-manifest.json` manually unless the task is explicitly about the release process.
 
