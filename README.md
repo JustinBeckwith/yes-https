@@ -2,8 +2,8 @@
 
 [![Build Status](https://github.com/JustinBeckwith/yes-https/workflows/ci/badge.svg)](https://github.com/JustinBeckwith/yes-https/actions/)
 [![npm version](https://badge.fury.io/js/yes-https.svg)](https://badge.fury.io/js/yes-https)
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Checked with Biome](https://img.shields.io/badge/checked_with-Biome-60a5fa.svg)](https://biomejs.dev)
+[![Release Please](https://img.shields.io/badge/release--please-enabled-4285f4.svg)](https://github.com/googleapis/release-please)
 
 `yes-https` is a happy little npm module that makes it easy to require `https` for your connect based application.
 
