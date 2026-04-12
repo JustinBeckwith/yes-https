@@ -27,10 +27,31 @@ jobs:
       - run: node --version
       - run: npm ci
       - run: npm test
-      - if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+  coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version: 20
+          cache: npm
+      - run: node --version
+      - run: npm ci
+      - run: npm run coverage
+      - if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
         uses: codecov/codecov-action@57e3a136b779b570ffcdbf80b3bdc90e7fab3de2 # v6.0.0
         with:
-          name: actions ${{ matrix.node }}
+          use_oidc: true
+          files: ./lcov.info
+          disable_search: true
+          fail_ci_if_error: true
+          name: actions node 20
   lint:
     runs-on: ubuntu-latest
     timeout-minutes: 15

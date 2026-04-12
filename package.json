@@ -5,11 +5,11 @@
   "type": "module",
   "exports": "./lib/index.js",
   "scripts": {
-    "test": "NODE_ENV=production c8 mocha",
+    "test": "NODE_ENV=production node --test",
     "lint": "biome check .",
     "renovate-config": "renovate-config-validator --strict",
     "fix": "biome check --write .",
-    "coverage": "c8 report --reporter=json"
+    "coverage": "NODE_ENV=production node --test --experimental-test-coverage --test-reporter=spec --test-reporter-destination=stdout --test-reporter=lcov --test-reporter-destination=lcov.info"
   },
   "repository": {
     "type": "git",
@@ -27,9 +27,7 @@
   "homepage": "https://github.com/JustinBeckwith/yes-https#readme",
   "devDependencies": {
     "@biomejs/biome": "^2.2.6",
-    "c8": "^11.0.0",
     "express": "^5.0.0",
-    "mocha": "^11.0.0",
     "renovate": "^43.110.16",
     "supertest": "^7.0.0"
   },
