@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/JustinBeckwith/yes-https/branch/main/graph/badge.svg)](https://codecov.io/gh/JustinBeckwith/yes-https)
 [![npm version](https://badge.fury.io/js/yes-https.svg)](https://badge.fury.io/js/yes-https)
 [![Checked with Biome](https://img.shields.io/badge/Checked_with-Biome-60a5fa?style=flat&logo=biome)](https://biomejs.dev)
-[![Release Please](https://img.shields.io/badge/Release%20automation-release--please-4285f4?style=flat)](https://github.com/googleapis/release-please)
+[![Release Please](https://img.shields.io/badge/%E2%9A%99%EF%B8%8F-release--please-4285f4?style=flat)](https://github.com/googleapis/release-please)
 
 `yes-https` is a happy little npm module that makes it easy to require `https` for your connect based application.
 
