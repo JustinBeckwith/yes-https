@@ -30,3 +30,8 @@ jobs:
           node-version: 24
       - run: npm install
       - run: npm run lint
+  renovate-config:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: npx --yes --package renovate -- renovate-config-validator --strict
