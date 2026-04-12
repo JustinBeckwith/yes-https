@@ -1,6 +1,6 @@
 # YES HTTPS!
 
-[![Build Status](https://github.com/JustinBeckwith/yes-https/workflows/ci/badge.svg)](https://github.com/JustinBeckwith/yes-https/actions/)
+[![Build Status](https://github.com/JustinBeckwith/yes-https/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/JustinBeckwith/yes-https/actions/workflows/ci.yaml?query=branch%3Amain)
 [![codecov](https://codecov.io/gh/JustinBeckwith/yes-https/branch/main/graph/badge.svg)](https://codecov.io/gh/JustinBeckwith/yes-https)
 [![npm version](https://badge.fury.io/js/yes-https.svg)](https://badge.fury.io/js/yes-https)
 [![Checked with Biome](https://img.shields.io/badge/checked_with-Biome-60a5fa.svg)](https://biomejs.dev)
