@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.1](https://github.com/JustinBeckwith/yes-https/compare/yes-https-v4.0.0...yes-https-v4.0.1) (2026-04-12)
+
+
+### Bug Fixes
+
+* normalize includeSubDomains option handling ([#134](https://github.com/JustinBeckwith/yes-https/issues/134)) ([61f7c77](https://github.com/JustinBeckwith/yes-https/commit/61f7c77af5520475b6f29371c7fcb60a852f4b31))
+
 ## [4.0.0](https://github.com/JustinBeckwith/yes-https/compare/yes-https-v3.0.1...yes-https-v4.0.0) (2025-10-14)
 
 
