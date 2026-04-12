@@ -1,14 +1,14 @@
 import fs from 'node:fs';
 import https from 'node:https';
+import { describe, it } from 'node:test';
 import express from 'express';
-import { describe, it } from 'mocha';
 import request from 'supertest';
 import yes from '../lib/index.js';
 
 const TEST_SERVER_CERT = fs.readFileSync('./test/certs/server.crt');
 
 describe('yes', () => {
-  it('should perform the 301 for an http request', (done) => {
+  it('should perform the 301 for an http request', async () => {
     // Configure a minimal web server with the defaults
     const app = express();
     app.use(yes());
@@ -17,19 +17,10 @@ describe('yes', () => {
     });
 
     // Verify the request returns a 301
-    request(app)
-      .get('/test')
-      .expect(301)
-      .end((error) => {
-        if (error) {
-          throw error;
-        }
-
-        done();
-      });
+    await request(app).get('/test').expect(301);
   });
 
-  it('should use the correct defaults', (done) => {
+  it('should use the correct defaults', { timeout: 60_000 }, async () => {
     // Configure a minimal web server with the defaults
     const app = express();
     app.use(yes());
@@ -39,20 +30,16 @@ describe('yes', () => {
 
     // Verify the request returns the right header when using https
     const server = createSecureServer(app);
-    request(server)
+    await request(server)
       .get('/test')
       .ca(TEST_SERVER_CERT)
       .expect('Strict-Transport-Security', 'max-age=86400; includeSubDomains')
-      .expect(200)
-      .end((error) => {
-        if (error) {
-          throw error;
-        }
-        done();
-      });
-  }).timeout(60_000);
+      .expect(200);
+  });
 
-  it('should allow disabling includeSubDomains with camel case options', (done) => {
+  it('should allow disabling includeSubDomains with camel case options', {
+    timeout: 60_000,
+  }, async () => {
     const app = express();
     app.use(
       yes({
@@ -64,20 +51,16 @@ describe('yes', () => {
     });
 
     const server = createSecureServer(app);
-    request(server)
+    await request(server)
       .get('/test')
       .ca(TEST_SERVER_CERT)
       .expect('Strict-Transport-Security', 'max-age=86400')
-      .expect(200)
-      .end((error) => {
-        if (error) {
-          throw error;
-        }
-        done();
-      });
-  }).timeout(60_000);
+      .expect(200);
+  });
 
-  it('should allow disabling includeSubDomains with the legacy lowercase alias', (done) => {
+  it('should allow disabling includeSubDomains with the legacy lowercase alias', {
+    timeout: 60_000,
+  }, async () => {
     const app = express();
     app.use(
       yes({
@@ -89,20 +72,14 @@ describe('yes', () => {
     });
 
     const server = createSecureServer(app);
-    request(server)
+    await request(server)
       .get('/test')
       .ca(TEST_SERVER_CERT)
       .expect('Strict-Transport-Security', 'max-age=86400')
-      .expect(200)
-      .end((error) => {
-        if (error) {
-          throw error;
-        }
-        done();
-      });
-  }).timeout(60_000);
+      .expect(200);
+  });
 
-  it('should ignore filtered requests', (done) => {
+  it('should ignore filtered requests', async () => {
     // Configure a minimal web server with the defaults
     const app = express();
     app.use(
@@ -116,19 +93,12 @@ describe('yes', () => {
     });
 
     // Verify the request returns a 200 for health checks
-    request(app)
-      .get('/_ah/health')
-      .expect(200)
-      .end((error) => {
-        if (error) {
-          throw error;
-        }
-
-        done();
-      });
+    await request(app).get('/_ah/health').expect(200);
   });
 
-  it('should include preload when configured', (done) => {
+  it('should include preload when configured', {
+    timeout: 60_000,
+  }, async () => {
     const app = express();
     app.use(yes({ preload: true }));
     app.get('/test', (_request, response) => {
@@ -136,23 +106,19 @@ describe('yes', () => {
     });
 
     const server = createSecureServer(app);
-    request(server)
+    await request(server)
       .get('/test')
       .ca(TEST_SERVER_CERT)
       .expect(
         'Strict-Transport-Security',
         'max-age=86400; includeSubDomains; preload',
       )
-      .expect(200)
-      .end((error) => {
-        if (error) {
-          throw error;
-        }
-        done();
-      });
-  }).timeout(60_000);
+      .expect(200);
+  });
 
-  it('should omit includeSubDomains when disabled', (done) => {
+  it('should omit includeSubDomains when disabled', {
+    timeout: 60_000,
+  }, async () => {
     const app = express();
     app.use(yes({ includeSubDomains: false }));
     app.get('/test', (_request, response) => {
@@ -160,20 +126,16 @@ describe('yes', () => {
     });
 
     const server = createSecureServer(app);
-    request(server)
+    await request(server)
       .get('/test')
       .ca(TEST_SERVER_CERT)
       .expect('Strict-Transport-Security', 'max-age=86400')
-      .expect(200)
-      .end((error) => {
-        if (error) {
-          throw error;
-        }
-        done();
-      });
-  }).timeout(60_000);
+      .expect(200);
+  });
 
-  it('should include includeSubDomains when explicitly enabled', (done) => {
+  it('should include includeSubDomains when explicitly enabled', {
+    timeout: 60_000,
+  }, async () => {
     const app = express();
     app.use(yes({ includeSubDomains: true }));
     app.get('/test', (_request, response) => {
@@ -181,18 +143,12 @@ describe('yes', () => {
     });
 
     const server = createSecureServer(app);
-    request(server)
+    await request(server)
       .get('/test')
       .ca(TEST_SERVER_CERT)
       .expect('Strict-Transport-Security', 'max-age=86400; includeSubDomains')
-      .expect(200)
-      .end((error) => {
-        if (error) {
-          throw error;
-        }
-        done();
-      });
-  }).timeout(60_000);
+      .expect(200);
+  });
 
   describe('includeSubDomains', () => {
     it('should include the directive by default over a secure connection', () => {
