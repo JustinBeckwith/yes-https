@@ -96,7 +96,9 @@ describe('yes', () => {
     await request(app).get('/_ah/health').expect(200);
   });
 
-  it('should include preload when configured', { timeout: 60_000 }, async () => {
+  it('should include preload when configured', {
+    timeout: 60_000,
+  }, async () => {
     const app = express();
     app.use(yes({ preload: true }));
     app.get('/test', (_request, response) => {
@@ -114,7 +116,9 @@ describe('yes', () => {
       .expect(200);
   });
 
-  it('should omit includeSubDomains when disabled', { timeout: 60_000 }, async () => {
+  it('should omit includeSubDomains when disabled', {
+    timeout: 60_000,
+  }, async () => {
     const app = express();
     app.use(yes({ includeSubDomains: false }));
     app.get('/test', (_request, response) => {
@@ -129,7 +133,9 @@ describe('yes', () => {
       .expect(200);
   });
 
-  it('should include includeSubDomains when explicitly enabled', { timeout: 60_000 }, async () => {
+  it('should include includeSubDomains when explicitly enabled', {
+    timeout: 60_000,
+  }, async () => {
     const app = express();
     app.use(yes({ includeSubDomains: true }));
     app.get('/test', (_request, response) => {
