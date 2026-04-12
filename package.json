@@ -11,10 +11,7 @@
     "fix": "biome check --write .",
     "coverage": "NODE_ENV=production node --test --experimental-test-coverage --test-reporter=spec --test-reporter-destination=stdout --test-reporter=lcov --test-reporter-destination=lcov.info"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JustinBeckwith/yes-https.git"
-  },
+  "repository": "JustinBeckwith/yes-https",
   "keywords": [
     "hsts",
     "https"
