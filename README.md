@@ -41,10 +41,14 @@ You can also set a few settings with the middleware to control the header:
 ```js
 app.use(yes({
   maxAge: 86400,            // defaults `86400`
-  includeSubdomains: true,  // defaults `true`
+  includeSubDomains: true,  // defaults `true`
   preload: true             // defaults `true`
 }));
 ```
+
+`includeSubDomains` is the canonical option name. For backwards
+compatibility, `includeSubdomains` is also accepted, and both spellings
+default to `true`.
 
 ### Ignoring specific requests
 

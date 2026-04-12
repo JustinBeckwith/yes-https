@@ -54,6 +54,58 @@ describe('yes', () => {
       });
   }).timeout(60_000);
 
+  it('should allow disabling includeSubDomains with camel case options', (done) => {
+    const app = express();
+    app.use(
+      yes({
+        includeSubDomains: false,
+      }),
+    );
+    app.get('/test', (_request, response) => {
+      response.sendStatus(200);
+    });
+
+    const server = createSecureServer(app);
+    request('https://localhost:8443')
+      .get('/test')
+      .expect('Strict-Transport-Security', 'max-age=86400')
+      .expect(200)
+      .end((error) => {
+        if (error) {
+          throw error;
+        }
+
+        server.close();
+        done();
+      });
+  }).timeout(60_000);
+
+  it('should allow disabling includeSubDomains with the legacy lowercase alias', (done) => {
+    const app = express();
+    app.use(
+      yes({
+        includeSubdomains: false,
+      }),
+    );
+    app.get('/test', (_request, response) => {
+      response.sendStatus(200);
+    });
+
+    const server = createSecureServer(app);
+    request('https://localhost:8443')
+      .get('/test')
+      .expect('Strict-Transport-Security', 'max-age=86400')
+      .expect(200)
+      .end((error) => {
+        if (error) {
+          throw error;
+        }
+
+        server.close();
+        done();
+      });
+  }).timeout(60_000);
+
   it('should ignore filtered requests', (done) => {
     // Configure a minimal web server with the defaults
     const app = express();
