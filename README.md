@@ -6,6 +6,8 @@
 [![Checked with Biome](https://img.shields.io/badge/checked_with-Biome-60a5fa.svg)](https://biomejs.dev)
 [![Release Please](https://img.shields.io/badge/release--please-enabled-4285f4.svg)](https://github.com/googleapis/release-please)
 
+![An armored bear holding a shield in a forest](./docs/assets/yes-https.png)
+
 `yes-https` is a happy little npm module that makes it easy to require `https` for your connect based application.
 
 It does this two ways:
