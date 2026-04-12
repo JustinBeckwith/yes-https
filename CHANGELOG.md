@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.0.3](https://github.com/JustinBeckwith/yes-https/compare/yes-https-v4.0.2...yes-https-v4.0.3) (2026-04-12)
+
+
+### Bug Fixes
+
+* normalize repository metadata for npm publishing ([#154](https://github.com/JustinBeckwith/yes-https/issues/154)) ([0382f21](https://github.com/JustinBeckwith/yes-https/commit/0382f21792bc2cf5b96de5e7ef3c369e57ca1c75))
+* use node 24 for release publishing ([#156](https://github.com/JustinBeckwith/yes-https/issues/156)) ([3c0c7a1](https://github.com/JustinBeckwith/yes-https/commit/3c0c7a15acc65d709b0b48f3f131bc5f6fc61214))
+
 ## [4.0.2](https://github.com/JustinBeckwith/yes-https/compare/yes-https-v4.0.1...yes-https-v4.0.2) (2026-04-12)
 
 
