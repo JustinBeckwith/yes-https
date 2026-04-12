@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.2](https://github.com/JustinBeckwith/yes-https/compare/yes-https-v4.0.1...yes-https-v4.0.2) (2026-04-12)
+
+
+### Bug Fixes
+
+* pass GitHub token to npm publish ([#152](https://github.com/JustinBeckwith/yes-https/issues/152)) ([cefe9a5](https://github.com/JustinBeckwith/yes-https/commit/cefe9a50109ea2602cf39fa255432593e62febe8))
+
 ## [4.0.1](https://github.com/JustinBeckwith/yes-https/compare/yes-https-v4.0.0...yes-https-v4.0.1) (2026-04-12)
 
 
