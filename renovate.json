@@ -6,7 +6,7 @@
     ":configMigration",
     ":rebaseStalePrs"
   ],
-  "dependencyDashboard": true,
+  "dependencyDashboard": false,
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch"],
