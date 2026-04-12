@@ -2,9 +2,15 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
-    ":disableDependencyDashboard",
     ":enableVulnerabilityAlerts",
     ":configMigration",
     ":rebaseStalePrs"
+  ],
+  "dependencyDashboard": true,
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "enabled": false
+    }
   ]
 }
