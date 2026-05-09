@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: false
 env:
   FORCE_COLOR: 2
-  NODE: 22
+  NODE: 24
 jobs:
   release-please:
     if: github.repository == 'JustinBeckwith/yes-https'
