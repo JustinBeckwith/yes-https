@@ -25,7 +25,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2.2.6",
     "express": "^5.0.0",
-    "renovate": "^43.110.16",
+    "renovate": "^44.0.0",
     "supertest": "^7.0.0"
   },
   "engines": {
