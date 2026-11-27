@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.0](https://github.com/JustinBeckwith/yes-https/compare/yes-https-v4.0.3...yes-https-v5.0.0) (2026-11-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* yes-https now requires Node.js 22 or newer.
+
+### Features
+
+* drop support for old Node.js versions ([#158](https://github.com/JustinBeckwith/yes-https/issues/158)) ([804dc57](https://github.com/JustinBeckwith/yes-https/commit/804dc5760a007f77f569165c404646884ded45e4))
+
 ## [4.0.3](https://github.com/JustinBeckwith/yes-https/compare/yes-https-v4.0.2...yes-https-v4.0.3) (2026-04-12)
 
 
