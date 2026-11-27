@@ -4,11 +4,9 @@
     "config:recommended",
     ":enableVulnerabilityAlerts",
     ":configMigration",
-    ":rebaseStalePrs"
+    ":rebaseStalePrs",
+    ":disableDependencyDashboard"
   ],
-  "dependencyDashboard": {
-    "enabled": false
-  },
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch"],
